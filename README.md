@@ -1,2 +1,2 @@
-# FlickrApp
-Flickrのギャラリーを作る
+# flickr-images
+Making Flickrs' images page.
