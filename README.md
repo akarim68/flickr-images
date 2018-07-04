@@ -1,2 +1,2 @@
-# flickr-images
-Flickr API apps
+# FlickrApp
+Flickrのギャラリーを作る
