@@ -24,7 +24,7 @@ helpers do
   # this function grabs 10 recently uploaded photos from Flickr
   # however, the data that is returned does not include the image urls
   def get_photos
-    response = HTTParty.get('https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&user_id=61133338@N02&api_key=' + KEY + '&format=json&nojsoncallback=1&per_page=10', format: :plain)
+    response = HTTParty.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + KEY + '&user_id=61133338%40N0&format=json&nojsoncallback=1&per_page=10', format: :plain)
 
     # yep, JSON.parse, just like in JavaScript
     data = JSON.parse response
@@ -44,7 +44,7 @@ helpers do
 
   # our second request is separated into another function
   def get_url photo
-    response = HTTParty.get('https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&user_id=61133338@N02&api_key=' + KEY + '&format=json&nojsoncallback=1&photo_id=' + photo[
+    response = HTTParty.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + KEY + '&user_id=61133338%40N0&format=json&nojsoncallback=1&photo_id=' + photo[
       "id"], format: :plain)
 
     data = JSON.parse response
